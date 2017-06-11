@@ -1,63 +1,61 @@
 {
-    "name": "PaulaAnsley",
-    "version": "1.0.0",
-    "description": "",
-    "main": "GruntFile.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/lesansley/paulaansley.git"
-    },
-    "keywords": [
-        "resume"
+  "name": "PaulaAnsley",
+  "version": "1.0.0",
+  "description": "",
+  "main": "GruntFile.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lesansley/paulaansley.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "Les Ansley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lesansley/paulaansley/issues"
+  },
+  "homepage": "https://github.com/lesansley/paulaansley#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.0",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babelify": "^7.3.0",
+    "chai": "^3.5.0",
+    "es6-promise": "^4.1.0",
+    "factor-bundle": "^2.5.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "load-grunt-configs": "^1.0.0",
+    "minifyify": "^7.3.5",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "@kapouer/template": "^1.0.1",
+    "babel-polyfill": "^6.23.0",
+    "dom-form-serializer": "^1.0.5",
+    "dom-template-strings": "^1.1.1",
+    "handlebars": "^4.0.10",
+    "html5shiv": "^3.7.3",
+    "moment": "^2.18.1",
+    "native-promise-only": "^0.8.1",
+    "navigo": "^4.7.3",
+    "superagent": "^3.5.2",
+    "superagent-no-cache": "^0.1.1",
+    "sweet-scroll": "^2.2.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
     ],
-    "author": "Les Ansley",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/lesansley/paulaansley/issues"
-    },
-    "scripts": {
-        "test": "mocha --compilers js:babel-core/register --require babel-polyfill"
-    },
-    "homepage": "https://github.com/lesansley/paulaansley#readme",
-    "devDependencies": {
-        "babel": "^6.23.0",
-        "babel-core": "^6.24.0",
-        "babel-plugin-es6-promise": "^1.1.1",
-        "babel-preset-es2015": "^6.24.0",
-        "babelify": "^7.3.0",
-        "chai": "^3.5.0",
-        "es6-promise": "^4.1.0",
-        "factor-bundle": "^2.5.0",
-        "grunt": "^1.0.1",
-        "grunt-browserify": "^5.0.0",
-        "grunt-contrib-clean": "^1.0.0",
-        "grunt-contrib-copy": "^1.0.0",
-        "load-grunt-configs": "^1.0.0",
-        "minifyify": "^7.3.5",
-        "mocha": "^3.2.0"
-    },
-    "dependencies": {
-        "@kapouer/template": "^1.0.1",
-        "babel-polyfill": "^6.23.0",
-        "dom-form-serializer": "^1.0.5",
-        "dom-template-strings": "^1.1.1",
-        "html5shiv": "^3.7.3",
-        "moment": "^2.18.1",
-        "native-promise-only": "^0.8.1",
-        "navigo": "^4.7.3",
-        "superagent": "^3.5.2",
-        "superagent-no-cache": "^0.1.1",
-        "sweet-scroll": "^2.2.1"
-    },
-    "babel": {
-        "presets": [
-            "es2015"
-        ],
-        "plugins": [
-            "es6-promise"
-        ]
-    }
+    "plugins": [
+      "es6-promise"
+    ]
+  }
 }
