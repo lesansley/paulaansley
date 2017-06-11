@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
-	"use strict";
+	grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-browserify');
 
     //loads the various task configuration files 

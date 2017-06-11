@@ -7,6 +7,7 @@ import * as Page from './Controllers/index';
 
 export default class App {
 	constructor () {
+		this.root = this.getRoot();
 		this.router = new Router(this);
 	}
 
@@ -24,6 +25,12 @@ export default class App {
 
 	pageError () {
 
+	}
+
+	getRoot () {
+		let fullUrl = window.location.href;
+        let rootUrl = fullUrl.substring(0, fullUrl.lastIndexOf('/'));
+		return rootUrl;
 	}
 }
 
