@@ -10,7 +10,7 @@ export default class NavView {
 
 	render () {
 		document.querySelector('.nav').appendChild(_nav(this.id));
-		onEvent.bind(this)('click', '.nav-item', this.navigate);
+		//onEvent.bind(this)('click', '.nav-item', this.navigate);
 
 	}
 

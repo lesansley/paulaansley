@@ -10,6 +10,7 @@ export default class App {
 	constructor () {
 		this.root = getRoot();
 		this.basePage = new Page.BasePage(this);
+		extendObject(this, new Router(this));
 		this.page = {
 			about: new Page.About(this),
 			contact: new Page.Contact(this),
@@ -24,8 +25,7 @@ export default class App {
 	init () {
 		this.basePage.init();
 		this.page.home.init();
-		extendObject(this, new Router(this));
-		this.router.navigate('/home');
+		this.router.updatePageLinks();
 	}
 
 	pageError () {
