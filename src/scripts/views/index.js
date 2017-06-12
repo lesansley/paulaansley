@@ -1,5 +1,5 @@
 import AboutView from './AboutView';
-import BasepageView from './BasepageView';
+import BasePageView from './BasePageView';
 import ContactView from './ContactView';
 import EducationView from './EducationView';
 import FooterView from './FooterView';
@@ -12,7 +12,7 @@ import WorkView from './WorkView';
 
 export {
 	AboutView,
-	BasepageView,
+	BasePageView,
 	ContactView,
 	EducationView,
 	FooterView,

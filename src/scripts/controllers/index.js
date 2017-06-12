@@ -1,5 +1,5 @@
 import About from './About';
-import Basepage from './Basepage';
+import BasePage from './BasePage';
 import Contact from './Contact';
 import Education from './Education';
 import Footer from './Footer';
@@ -12,7 +12,7 @@ import Work from './Work';
 
 export {
 	About,
-	Basepage,
+	BasePage,
 	Contact,
 	Education,
 	Header,

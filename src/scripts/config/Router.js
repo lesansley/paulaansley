@@ -3,10 +3,11 @@ import Navigo from 'Navigo';
 export default class Router {
 	constructor (app) {
 		this.app = app;
-		this.router = new Navigo(this.app.root, false);
+		this.router = new Navigo(this.app.root);
+
 		this.router.on({
 			'/home': function () {
-				this.app.page('About');
+				this.app.page.home.renderView();
 			}.bind(this),
 			'/about': function () {
 				this.app.page('About');
@@ -27,7 +28,6 @@ export default class Router {
 		.resolve();
 
 		this.router.notFound(function (query) {
-			if(this.app.isValidEntryPoint(this.app.getEntryUrl())) return window.location.href = window.location.pathname;
 			return this.app.pageError(query);
 		}.bind(this));
 	}
