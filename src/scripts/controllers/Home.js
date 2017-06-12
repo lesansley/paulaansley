@@ -1,10 +1,11 @@
 export default class Home {
-	constructor () {
-		
+	constructor (app) {
+		this.app = app;
+		this.id = 'home';
 	}
 
 	init () {
-		
+		window.history.replaceState(null, 'Paula Ansley Resume', `${this.app.root}/${this.id}`);
 	}
 
 	renderView () {

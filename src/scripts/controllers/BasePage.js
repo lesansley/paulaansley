@@ -3,10 +3,11 @@ import { BasePageView } from './../views/index';
 
 
 export default class BasePage {
-	constructor () {
+	constructor (app) {
+		this.app = app;
 		this.id = `page${Math.round(Math.random() * 1000000000)}`;
 		this.view = new BasePageView(this);
-		this.header = new Header();
+		this.header = new Header(this.app);
 		this.footer = new Footer();
 	}
 

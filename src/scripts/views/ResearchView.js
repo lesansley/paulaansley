@@ -1,8 +1,10 @@
+import Handlebars from 'handlebars';
+
 import { _research } from './../templates/index';
 
 export default class ResearchView {
-	constructor () {
-		
+	constructor (controller) {
+		this.controller = controller;
 	}
 
 	render () {

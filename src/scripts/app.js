@@ -4,12 +4,12 @@ import '@kapouer/template';
 
 import Router from './config/Router';
 import * as Page from './controllers/index';
-import extendObject from './utils/helpers';
+import { extendObject } from './utils/helpers';
 
 export default class App {
 	constructor () {
 		this.root = getRoot();
-		this.basePage = new Page.BasePage();
+		this.basePage = new Page.BasePage(this);
 		this.page = {
 			about: new Page.About(this),
 			contact: new Page.Contact(this),
@@ -23,8 +23,9 @@ export default class App {
 
 	init () {
 		this.basePage.init();
+		this.page.home.init();
 		extendObject(this, new Router(this));
-		this.router.updatePageLinks();
+		this.router.navigate('/home');
 	}
 
 	pageError () {
@@ -39,5 +40,4 @@ function getRoot() {
 }
 
 const app = new App();
-history.replaceState(null, 'Home Page', `${getRoot()}/home`);		
 window.addEventListener('load', () => app.init());

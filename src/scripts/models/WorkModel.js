@@ -86,4 +86,8 @@ export default class WorkModel {
 	constructor () {
 		this.work = work;
 	}
+
+	read () {
+		return this.work;
+	}
 }

@@ -2,10 +2,11 @@ import { HeaderView } from './../views/index';
 import { Nav } from './index';
 
 export default class Header {
-	constructor () {
+	constructor (app) {
+		this.app = app;
 		this.id = 'header';
 		this.view = new HeaderView(this);
-		this.nav = new Nav();
+		this.nav = new Nav(this.app);
 	}
 
 	init () {

@@ -45,7 +45,7 @@
     "html5shiv": "^3.7.3",
     "moment": "^2.18.1",
     "native-promise-only": "^0.8.1",
-    "navigo": "^4.7.3",
+    "navigo": "^5.2.0",
     "superagent": "^3.5.2",
     "superagent-no-cache": "^0.1.1",
     "sweet-scroll": "^2.2.1"

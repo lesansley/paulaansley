@@ -3,29 +3,28 @@ import Navigo from 'Navigo';
 export default class Router {
 	constructor (app) {
 		this.app = app;
-		this.router = new Navigo(this.app.root);
-
+		this.router = new Navigo();
 		this.router.on({
-			'/home': function () {
-				this.app.page.home.renderView();
-			}.bind(this),
 			'/about': function () {
-				this.app.page('About');
+				console.log('about');
 			}.bind(this),
 			'/contact': function () {
-				this.app.page('Contact');
+				console.log('contact');
 			}.bind(this),
 			'/education': function () {
-				this.app.page('Education');
+				console.log('education');
+			}.bind(this),
+			'/home': function () {
+				console.log('home');
 			}.bind(this),
 			'/research': function () {
-				this.app.page('Research');
+				console.log('research');
 			}.bind(this),
 			'/work': function () {
-				this.app.page('Work');
+				console.log('work');
 			}.bind(this),
-		})
-		.resolve();
+			
+		}).resolve();
 
 		this.router.notFound(function (query) {
 			return this.app.pageError(query);
