@@ -28,8 +28,8 @@ export default class App {
 		this.router.updatePageLinks();
 	}
 
-	pageError () {
-
+	pageError (err) {
+		console.error('Router Error', err);
 	}
 }
 
