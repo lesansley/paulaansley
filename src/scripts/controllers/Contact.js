@@ -7,6 +7,10 @@ export default class Contact {
 		
 	}
 
+	controller () {
+		
+	}
+
 	renderView () {
 
 	}

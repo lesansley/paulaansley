@@ -11,6 +11,10 @@ export default class Nav {
 		this.renderView();
 	}
 
+	controller () {
+		
+	}
+
 	renderView () {
 		this.view.render();
 	}

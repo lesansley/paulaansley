@@ -9,7 +9,7 @@ export default class Header {
 		this.nav = new Nav(this.app);
 	}
 
-	init () {
+	controller () {
 		this.renderView();
 		this.nav.init();
 	}

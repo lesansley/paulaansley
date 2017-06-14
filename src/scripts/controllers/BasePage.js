@@ -11,10 +11,10 @@ export default class BasePage {
 		this.footer = new Footer();
 	}
 
-	init () {
+	controller () {
 		this.renderView();
-		this.header.init();
-		this.footer.init();
+		this.header.controller();
+		this.footer.controller();
 	}
 
 	renderView () {

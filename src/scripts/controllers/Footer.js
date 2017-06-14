@@ -6,7 +6,7 @@ export default class Footer {
 		this.view = new FooterView(this);
 	}
 
-	init () {
+	controller () {
 		this.renderView();
 	}
 

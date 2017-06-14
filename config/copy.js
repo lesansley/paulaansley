@@ -8,6 +8,12 @@ module.exports = {
 	            dest: './build/'
 	        },
 	        {
+	            expand: true,
+	            cwd: './src/styles/',
+	            src: '**',
+	            dest: './build/styles/'
+	        },
+	        {
 	        	flatten: true,
 	            expand: true,
 	            cwd: './src/images/',

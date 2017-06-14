@@ -10,22 +10,28 @@ export default class Router {
 		});
 		this.router
 			.on('/about', function () {
-				console.log('about');
+				document.querySelector('title').innerHTML = 'Paula Ansley - about';
+				this.app.page.about.controller();
 			}.bind(this))
 			.on('/contact', function () {
-				console.log('contact');
+				document.querySelector('title').innerHTML = 'Paula Ansley - contact';
+				this.app.page.contact.controller();
 			}.bind(this))
 			.on('/education', function () {
-				console.log('education');
+				document.querySelector('title').innerHTML = 'Paula Ansley - education';
+				this.app.page.education.controller();
 			}.bind(this))
 			.on('/home', function () {
-				console.log('home');
+				document.querySelector('title').innerHTML = 'Paula Ansley - home';
+				this.app.page.home.controller();
 			}.bind(this))
 			.on('/research', function () {
-				console.log('research');
+				document.querySelector('title').innerHTML = 'Paula Ansley - research';
+				this.app.page.research.controller();
 			}.bind(this))
 			.on('/work', function () {
-				console.log('work');
+				document.querySelector('title').innerHTML = 'Paula Ansley - work';
+				this.app.page.work.controller();
 			}.bind(this))
 			.resolve();
 

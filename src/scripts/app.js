@@ -23,13 +23,14 @@ export default class App {
 	}
 
 	init () {
-		this.basePage.init();
-		this.page.home.init();
+		this.basePage.controller();
 		this.router.updatePageLinks();
+		window.history.replaceState(null, 'Paula Ansley Resume - HomePage', `${this.root}/home`);
+		this.router.resolve();
 	}
 
-	pageError (err) {
-		console.error('Router Error', err);
+	pageError () {
+		this.router.navigate('/oops');
 	}
 }
 
