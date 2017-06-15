@@ -1,3 +1,5 @@
+import Handlebars from 'handlebars';
+
 import { EducationView } from './../views/index';
 import { education } from './../data/index';
 
@@ -14,6 +16,8 @@ export default class Education {
 	}
 
 	controller () {
+		let source = document.getElementById("some-template").innerHTML; 
+		let template = Handlebars.compile(source);
 		if(!this.model.exists(this.id)) this.init();
 		console.log(this.model.read(this.id));
 	}

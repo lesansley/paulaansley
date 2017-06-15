@@ -3,11 +3,7 @@ import Navigo from 'Navigo';
 export default class Router {
 	constructor (app) {
 		this.app = app;
-		this.router = new Navigo(this.app.root);
-		this.router.hooks({
-			before: (done) => { console.log('before'); done(); },
-			after: () => { console.log('after'); }
-		});
+		this.router = new Navigo(this.app.rootUrl);
 		this.router
 			.on('/about', function () {
 				document.querySelector('title').innerHTML = 'Paula Ansley - about';

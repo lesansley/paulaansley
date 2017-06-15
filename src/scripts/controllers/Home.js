@@ -1,19 +1,20 @@
 import { HomeView } from './../views/index';
-import { HomeModel } from './../models/index';
+import { home } from './../data/index';
 
 export default class Home {
-	constructor (app) {
-		this.app = app;
+	constructor (model) {
+		this.model = model;
 		this.id = 'home';
 		this.view = new HomeView(this);
-		this.model = new HomeModel();
 	}
 
 	init () {
-		window.history.replaceState(null, 'Paula Ansley Resume', `${this.app.root}/${this.id}`);
+		this.model.create(this.id);
+		this.model.update(this.id, home);
 	}
 
 	controller () {
+		if(!this.model.exists(this.id)) this.init();
 		this.view.remove();
 		this.renderView();
 	}

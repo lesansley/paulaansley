@@ -1,3 +1,5 @@
+import request from 'superagent';
+
 /**
  * Overwrites obj1's values with obj2's and adds obj2's if non existent in obj1
  * @param  {Object} obj1 The object to be extended
@@ -191,4 +193,73 @@ export function getParentByNodeName (node, tagName) {
     }
     while(parent !== 'HMTL');
     return parent;
+}
+
+export function getPubMedReferences (term = '') {
+    let config = {
+            baseUrl: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/',
+            search: 'esearch.fcgi',
+            summary: 'esummary.fcgi',
+            db: 'pubmed',
+            retmode: 'json',
+            retmax: '50',
+            rettype: 'abstract',
+            term: encodeURI(term).replace(/%20/g, '+'),
+            accept: 'application/json',
+            type: 'json'
+        };
+
+    return new Promise( (resolve, reject) => {
+        getIdList.bind(this)()
+            .then( function(res) {
+                getRefList.bind(this)(res.toString())
+                    .then( function(res) {
+                        resolve(res);
+                    }.bind(this));
+            }.bind(this))
+            .catch ( (err) => {
+                reject(`{ error: ${err} }`);
+            });
+    });
+
+    function getIdList () {
+        let query = `${config.baseUrl + config.search}?db=${config.db}&term=${config.term}&retmode=${config.retmode}&retmax=${config.retmax}`;
+        return new Promise( (resolve, reject) => {
+            pubMedAPI(query)
+                .then( (res) => {
+                    resolve(res.esearchresult.idlist);
+                })
+                .catch( (err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    function getRefList (idx) {
+        let query = `${config.baseUrl + config.summary}?db=${config.db}&retmode=${config.retmode}&rettype=${config.rettype}&id=${idx}`;
+        return new Promise( (resolve, reject) => {
+            pubMedAPI(query)
+                .then( (res) => {
+                    resolve(res.result);
+                })
+                .catch( (err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    function pubMedAPI (query) {
+        return new Promise( (resolve, reject) => {
+            request
+                .get(query)
+                .then( (res) => {
+                    if(res.status === 200) resolve(res.body);
+                    reject(res);
+                })
+                .catch( (err) => {
+                    reject(err);
+                });
+        });
+    }
+
 }

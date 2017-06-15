@@ -82,12 +82,4 @@ OptiSPORT was given an award of excellence by South African Trade and Industry f
 	}
 ];
 
-export default class WorkModel {
-	constructor () {
-		this.work = work;
-	}
-
-	read () {
-		return this.work;
-	}
-}
+export default work;

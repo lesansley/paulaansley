@@ -1,4 +1,4 @@
-const schools = [
+const education = [
 	{
 		name: 'Newcastle University',
 		award: 'MSc',
@@ -46,8 +46,4 @@ const schools = [
 	}
 ];
 
-export default class EducationModel {
-	constructor () {
-		this.schools = schools;
-	}
-}
+export default education;
