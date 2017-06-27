@@ -1,28 +1,20 @@
-import Handlebars from 'handlebars';
+import { JournalsView } from './../views/index';
 
-import { EducationView } from './../views/index';
-import { education } from './../data/index';
-
-export default class Education {
-	constructor (model) {
-		this.model = model;
-		this.view = new EducationView();
-		this.id = 'education';
+export default class Journals {
+	constructor (page) {
+		this.page = page;
+		this.model = this.page.model;
+		this.id = 'journals';
+		this.view = new JournalsView(this, this.model);
 	}
 
-	init () {
-		this.model.create(this.id);
-		this.model.update(this.id, education);
-	}
-
-	controller () {
-		let source = document.getElementById("some-template").innerHTML; 
-		let template = Handlebars.compile(source);
-		if(!this.model.exists(this.id)) this.init();
+	controller (data) {
+		this.model.update(this.id, data);
 		console.log(this.model.read(this.id));
+		this.renderView();
 	}
 
 	renderView () {
-
+		this.view.render();
 	}
 }

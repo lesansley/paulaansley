@@ -2,8 +2,9 @@ import { ContactView } from './../views/index';
 import { contact } from './../data/index';
 
 export default class Contact {
-	constructor (model) {
-		this.model = model;
+	constructor (app) {
+		this.app = app;
+		this.model = this.app.model;
 		this.view = new ContactView();
 		this.id = 'contact';
 	}

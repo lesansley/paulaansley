@@ -2,10 +2,11 @@ import { EducationView } from './../views/index';
 import { education } from './../data/index';
 
 export default class Education {
-	constructor (model) {
-		this.model = model;
-		this.view = new EducationView();
+	constructor (app) {
+		this.app = app;
+		this.model = this.app.model;
 		this.id = 'education';
+		this.view = new EducationView();
 	}
 
 	init () {

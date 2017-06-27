@@ -1,13 +1,17 @@
+import { Journals, Reviews} from './index';
 import { ResearchView } from './../views/index';
 import { searchTerm } from './../data/index';
 
 import { getPubMedReferences } from './../utils/helpers';
 
 export default class Research {
-	constructor (model) {
+	constructor (app) {
+		this.app = app;
 		this.id = 'research';
-		this.model = model;
+		this.model = this.app.model;
 		this.view = new ResearchView(this);
+		this.journals = new Journals(this);
+		this.reviews = new Reviews(this);
     }
 
 	init () {
@@ -52,17 +56,19 @@ export default class Research {
 	controller () {
 		if(!this.model.exists(this.id)) {
 			this.init().then( function() {
-				console.log(this.model.read(this.id));
+				this.renderView();
 			}.bind(this))
-			.catch( function() {
-				console.log(this.model.read(this.id));
-			});
+			.catch( err => console.error(err) );
 		} else {
-			console.log(this.model.read(this.id));
+			this.renderView();
+
 		}
 	}
 
 	renderView () {
-		
+		this.view.remove();
+		this.view.render(this);
+		this.journals.controller(this.model.read(this.id).journals);
+		this.reviews.controller(this.model.read(this.id).reviews);
 	}
 }

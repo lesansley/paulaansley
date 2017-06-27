@@ -2,8 +2,9 @@ import { HomeView } from './../views/index';
 import { home } from './../data/index';
 
 export default class Home {
-	constructor (model) {
-		this.model = model;
+	constructor (app) {
+		this.app = app;
+		this.model = this.app.model;
 		this.id = 'home';
 		this.view = new HomeView(this);
 	}

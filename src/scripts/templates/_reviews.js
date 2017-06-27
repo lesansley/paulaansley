@@ -1,13 +1,13 @@
 import dom from 'dom-template-strings';
 
-export default function _journals (id) {
+export default function _reviews (id) {
     return dom`
 <script id="handlebars" type="text/x-handlebars-template">
 	<div id="${id}">
 		<ul>
-			{{#journals}}
+			{{#reviews}}
 
-			{{/journals}}
+			{{/reviews}}
 		</ul>
 	</div>
 </script>

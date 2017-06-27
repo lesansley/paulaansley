@@ -2,8 +2,9 @@ import { AboutView } from './../views/index';
 import { about } from './../data/index';
 
 export default class About {
-	constructor (model) {
-		this.model = model;
+	constructor (app) {
+		this.app = app;
+		this.model = this.app.model;
 		this.view = new AboutView();
 		this.id = 'about';
 	}

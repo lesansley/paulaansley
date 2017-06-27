@@ -14,13 +14,13 @@ export default class App {
 		this.model = new AppModel();
 		extendObject(this, new Router(this));
 		this.page = {
-			about: new Page.About(this.model),
-			contact: new Page.Contact(this.model),
-			education: new Page.Education(this.model),
-			home: new Page.Home(this.model),
-			oops: new Page.Oops(this.model),
-			research: new Page.Research(this.model),
-			work: new Page.Work(this.model)
+			about: new Page.About(this),
+			contact: new Page.Contact(this),
+			education: new Page.Education(this),
+			home: new Page.Home(this),
+			oops: new Page.Oops(this),
+			research: new Page.Research(this),
+			work: new Page.Work(this)
 		};
 	}
 
