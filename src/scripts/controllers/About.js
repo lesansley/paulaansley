@@ -11,7 +11,7 @@ export default class About {
 
 	init () {
 		this.model.create(this.id);
-		this.model.update(this.id, about);
+		this.model.update(this.id, { about });
 	}
 
 	controller () {

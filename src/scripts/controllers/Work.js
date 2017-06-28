@@ -11,7 +11,7 @@ export default class Work {
 
 	init () {
 		this.model.create(this.id);
-		this.model.update(this.id, work);
+		this.model.update(this.id, { work });
 	}
 
 	controller () {

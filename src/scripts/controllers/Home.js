@@ -11,7 +11,7 @@ export default class Home {
 
 	init () {
 		this.model.create(this.id);
-		this.model.update(this.id, home);
+		this.model.update(this.id, { home });
 	}
 
 	controller () {

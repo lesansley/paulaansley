@@ -11,7 +11,7 @@ export default class Contact {
 
 	init () {
 		this.model.create(this.id);
-		this.model.update(this.id, contact);
+		this.model.update(this.id, { contact });
 	}
 
 	controller () {
