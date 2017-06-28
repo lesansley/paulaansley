@@ -5,8 +5,8 @@ export default class Work {
 	constructor (app) {
 		this.app = app;
 		this.model = this.app.model;
-		this.view = new WorkView();
 		this.id = 'work';
+		this.view = new WorkView(this);
 	}
 
 	init () {
@@ -17,10 +17,10 @@ export default class Work {
 	controller () {
 		if(!this.model.exists(this.id)) this.init();
 		console.log(this.model.read(this.id));
+		this.renderView();
 	}
 
 	renderView () {
-		this.view.remove();
 		this.view.render();
 	}
 }

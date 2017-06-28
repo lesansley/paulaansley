@@ -12,12 +12,6 @@ const contact = [
 		icon: 'images/phone_30x30.png'
 	},
 	{
-		type: 'email',
-		html: 'paula@ansleyfamily.com',
-		href: 'mailto:paula@ansleyfamily.com',
-		icon: 'images/email_30x30.png'
-	},
-	{
 		type: 'twitter',
 		html: '@paularosa_photo',
 		href: 'https://twitter.com/paularosa_photo',

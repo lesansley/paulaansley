@@ -8,7 +8,7 @@ export default class BasePage {
 		this.id = `page${Math.round(Math.random() * 1000000000)}`;
 		this.view = new BasePageView(this);
 		this.header = new Header(this.app);
-		this.footer = new Footer();
+		this.footer = new Footer(this.app);
 	}
 
 	controller () {

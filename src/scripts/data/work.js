@@ -6,7 +6,7 @@ const work = [
 		location: 'Northumberland, UK',
 		startDate: 'Sep 2014',
 		endDate: 'Aug 2016',
-		url: 'https://www.paularosa.photography',
+		url: 'http://www.paularosa.photography',
 		description: ''
 	},
 	{
@@ -16,7 +16,7 @@ const work = [
 		location: 'Newcastle, UK',
 		startDate: 'Sep 2007',
 		endDate: 'Aug 2014',
-		url: 'https://www.paularosa.photography',
+		url: 'https://www.northumbria.ac.uk',
 		description: [
 			'Unit of Assessment lead for Research Excellence Framework 2014.',
 			'Member of management committee for the Department of sport, exercise and rehabilitation with a £10m budget.',
@@ -80,7 +80,7 @@ const work = [
 		location: 'Cape Town, South Africa',
 		startDate: 'Sep 1999',
 		endDate: 'Dec 2001',
-		url: 'http://www.maties.ac.za',
+		url: 'http://www.sun.ac.za',
 		description: [
 			'Novel research on equine physiology and exercise immunology.',
 			'Contractual scientist for Pharma Natura Pty, South Africa.',

@@ -5,8 +5,8 @@ export default class Contact {
 	constructor (app) {
 		this.app = app;
 		this.model = this.app.model;
-		this.view = new ContactView();
 		this.id = 'contact';
+		this.view = new ContactView(this);
 	}
 
 	init () {
@@ -17,9 +17,10 @@ export default class Contact {
 	controller () {
 		if(!this.model.exists(this.id)) this.init();
 		console.log(this.model.read(this.id));
+		this.renderView ();
 	}
 
 	renderView () {
-
+		this.view.render();
 	}
 }

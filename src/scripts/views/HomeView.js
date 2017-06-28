@@ -9,8 +9,8 @@ export default class HomeView {
 
 	render () {
 		let home = _home(this.id);
-		home.querySelector('.quote').innerHTML = this.controller.model.read(this.id)[0].quote;
-		home.querySelector('.author').innerHTML = this.controller.model.read(this.id)[0].author;
+		home.querySelector('.quote').innerHTML = this.controller.model.read(this.id).home[0].quote;
+		home.querySelector('.author').innerHTML = this.controller.model.read(this.id).home[0].author;
 		document.querySelector('.page').appendChild(home);
 	}
 

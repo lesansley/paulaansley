@@ -10,8 +10,8 @@ import { extendObject } from './utils/helpers';
 export default class App {
 	constructor () {
 		this.rootUrl = getRoot();
-		this.basePage = new Page.BasePage(this);
 		this.model = new AppModel();
+		this.basePage = new Page.BasePage(this);
 		extendObject(this, new Router(this));
 		this.page = {
 			about: new Page.About(this),
