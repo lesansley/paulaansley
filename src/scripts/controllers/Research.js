@@ -1,4 +1,3 @@
-import { Journals, Reviews} from './index';
 import { ResearchView } from './../views/index';
 import { searchTerm } from './../data/index';
 
@@ -10,8 +9,6 @@ export default class Research {
 		this.id = 'research';
 		this.model = this.app.model;
 		this.view = new ResearchView(this);
-		this.journals = new Journals(this);
-		this.reviews = new Reviews(this);
     }
 
 	init () {
@@ -61,14 +58,12 @@ export default class Research {
 			.catch( err => console.error(err) );
 		} else {
 			this.renderView();
-
 		}
 	}
 
 	renderView () {
-		this.view.remove();
 		this.view.render(this);
-		this.journals.controller(this.model.read(this.id).journals);
-		this.reviews.controller(this.model.read(this.id).reviews);
+		this.view.publications('journals');
+		this.view.publications('reviews');
 	}
 }

@@ -1,4 +1,5 @@
 import { WorkView } from './../views/index';
+import { work } from './../data/index';
 
 export default class Work {
 	constructor (app) {
@@ -9,14 +10,17 @@ export default class Work {
 	}
 
 	init () {
-		
+		this.model.create(this.id);
+		this.model.update(this.id, work);
 	}
 
 	controller () {
-		
+		if(!this.model.exists(this.id)) this.init();
+		console.log(this.model.read(this.id));
 	}
 
 	renderView () {
-
+		this.view.remove();
+		this.view.render();
 	}
 }

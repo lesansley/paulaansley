@@ -5,11 +5,9 @@ import Education from './Education';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
-import Journals from './Journals';
 import Nav from './Nav';
 import Oops from './Oops';
 import Research from './Research';
-import Reviews from './Reviews';
 import Work from './Work';
 
 export {
@@ -20,10 +18,8 @@ export {
 	Header,
 	Footer,
 	Home,
-	Journals,
 	Nav,
 	Oops,
 	Research,
-	Reviews,
 	Work
 };

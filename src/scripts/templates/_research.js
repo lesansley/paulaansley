@@ -7,8 +7,8 @@ export default function _research (id) {
 	<div class="journals">
 		
 	</div>
-	<h2>Book Chapters</h2>
-	<div class="books">
+	<h2>Reviews</h2>
+	<div class="reviews">
 		
 	</div>
 </div>

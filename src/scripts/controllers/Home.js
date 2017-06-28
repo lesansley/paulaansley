@@ -16,7 +16,6 @@ export default class Home {
 
 	controller () {
 		if(!this.model.exists(this.id)) this.init();
-		this.view.remove();
 		this.renderView();
 	}
 

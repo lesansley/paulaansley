@@ -4,6 +4,18 @@ export default class Router {
 	constructor (app) {
 		this.app = app;
 		this.router = new Navigo(this.app.rootUrl);
+		this.router.hooks({
+			before: (done) => { 
+				let page = document.querySelector('.page');
+				if(page) {
+					while (page.childElementCount > 0) {
+						page.removeChild(page.firstElementChild);
+					}
+				}
+				done();
+			},
+			after: () => {}
+		});
 		this.router
 			.on('/about', function () {
 				document.querySelector('title').innerHTML = 'Paula Ansley - about';
@@ -32,7 +44,8 @@ export default class Router {
 			.resolve();
 
 		this.router.notFound(function (query) {
-			return this.app.pageError(query);
+			document.querySelector('title').innerHTML = 'Paula Ansley - oops';
+			this.app.page.oops.controller(query);
 		}.bind(this));
 	}
 }

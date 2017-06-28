@@ -17,11 +17,4 @@ export default class HomeView {
 	quotes () {
 		
 	}
-
-	remove () {
-		let page = document.querySelector('.page');
-		while (page.childElementCount > 0) {
-			page.removeChild(page.firstElementChild);
-		}
-	}
 }
